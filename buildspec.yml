@@ -1,0 +1,14 @@
+version 0.2
+phases:
+	pre_build:
+		commands:
+		- echo " entering pre build phase"
+	build:
+		commands:
+		- mvn clean prepare-package war:exploded
+	post_build:
+		commands:
+		- echo " entering post build phase"
+artifacts:
+	files:
+	- target/*.war
